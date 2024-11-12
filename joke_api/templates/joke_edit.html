@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Edit joke #{{ joke.id }}</title>
+    <link rel="stylesheet" href="/css/joke.css" type="text/css" media="screen">
+  </head>
+  <body>
+    <div class="wrapper">
+      <form method="post" action="/jokes/edit/{{ joke.joke_id }}">
+        <table>
+          <tr>
+            <td>Joke ID:</td>
+            <td><input name="joke_id" type="number" value="{{ joke.joke_id }}"></td>
+          </tr>
+          <tr>
+            <td>Category:</td>
+            <td>
+              <select name="category_id">
+                {% for item in categories.results %}
+                  {% if item.category_id == joke.category_id %}
+                  <option value="{{ item.category_id }}" selected>{{ item.category_name }}</option>
+                  {% else %}
+                  <option value="{{ item.category_id }}">{{ item.category_name }}</option>
+                  {% endif %}
+                {% endfor %}
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Joke text:</td>
+            <td>
+                <textarea name="joke_text" rows="10" cols="30">{{ joke.joke_text }}</textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>Joke ranking:</td>
+            <td>
+              1 (bad) <input type="range" name="joke_rank" min="1" max="10" value="{{ joke.joke_rank }}"> 10 (good)
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2"><input type="submit" value="Submit"></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>

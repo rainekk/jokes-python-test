@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Jokes</title>
+    <link rel="stylesheet" href="/css/joke.css" type="text/css" media="screen">
+  </head>
+  <body>
+    <div class="wrapper">
+      <table>
+        <tr>
+          <td><b>ID</b></td>
+          <td><b>Category</b></td>
+          <td><b>Text</b></td>
+          <td><b>Ranking</b></td>
+          <td colspan="2"><b>Action</b></td>
+        </tr>
+
+        {% for item in result.results %}
+        <tr>
+          <td><a href="/jokes/{{ item["joke_id"] }}">{{ item["joke_id"] }}</a></td>
+          <td>
+            {% for category in categories.results %}
+              {% if category["category_id"] == item["category_id"] %}
+                {{ category["category_name"] }}
+              {% endif %}
+            {% endfor %}
+          </td>
+          <td>{{ item["joke_text"] }}</td>
+          <td>{{ item["joke_rank"] }} / 10</td>
+          <td><a href="/jokes/edit/{{ item["joke_id"] }}">edit</a></td>
+          <td><a href="/jokes/delete/{{ item["joke_id"] }}">delete</a></td>
+        </tr>
+        {% endfor %}
+
+      </table>
+
+      <a href="/">[back]</a>
+    </div>
+  </body>
+</html>

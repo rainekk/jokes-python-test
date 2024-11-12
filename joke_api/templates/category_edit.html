@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Edit category #{{ category.id }}</title>
+    <link rel="stylesheet" href="/css/joke.css" type="text/css" media="screen">
+  </head>
+  <body>
+    <div class="wrapper">
+      <form method="post" action="/categories/edit/{{ category.category_id }}">
+        <table>
+          <tr>
+            <td>Category ID:</td>
+            <td><input name="category_id" type="number" value="{{ category.category_id }}"></td>
+          </tr>
+          <tr>
+            <td>Category name:</td>
+            <td><input name="category_name" type="text" value="{{ category.category_name }}"></td>
+          </tr>
+          <tr>
+            <td colspan="2"><input type="submit" value="Submit"></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>

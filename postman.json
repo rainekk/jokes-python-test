@@ -1,0 +1,544 @@
+{
+	"info": {
+		"_postman_id": "9dfaa86e-987c-4468-81a4-2e4731810a6e",
+		"name": "joke_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "Show categories",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/categories/0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"categories",
+								"0"
+							]
+						},
+						"description": "Shows all categories"
+					},
+					"response": []
+				},
+				{
+					"name": "Show category",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/categories/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"categories",
+								"1"
+							]
+						},
+						"description": "Shows a particular category"
+					},
+					"response": []
+				},
+				{
+					"name": "Show category by name",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/categories/generic",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"categories",
+								"generic"
+							]
+						},
+						"description": "Shows a particular category by name"
+					},
+					"response": []
+				},
+				{
+					"name": "Add category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"item\": {\n\t\t\"name\": \"one-liner\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"categories"
+							]
+						},
+						"description": "Adds a new category"
+					},
+					"response": []
+				},
+				{
+					"name": "Update category",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"item\": {\"id\": 200, \"name\": \"politics\"}\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/categories/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"categories",
+								"3"
+							]
+						},
+						"description": "Updates an existing category"
+					},
+					"response": []
+				},
+				{
+					"name": "Update category by name",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"item\": {\"id\": 200, \"name\": \"politics\"}\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/categories/one-liner",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"categories",
+								"one-liner"
+							]
+						},
+						"description": "Updates an existing category by name"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete category",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/categories/200",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"categories",
+								"200"
+							]
+						},
+						"description": "Deletes an existing category"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete category by name",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/categories/politics",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"categories",
+								"politics"
+							]
+						},
+						"description": "Deletes an existing category by name"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Jokes",
+			"item": [
+				{
+					"name": "Show jokes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/jokes/0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"jokes",
+								"0"
+							]
+						},
+						"description": "Shows all categories"
+					},
+					"response": []
+				},
+				{
+					"name": "Show joke",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/jokes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"jokes",
+								"1"
+							]
+						},
+						"description": "Shows a particular joke"
+					},
+					"response": []
+				},
+				{
+					"name": "Show random joke",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/jokes/random",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"jokes",
+								"random"
+							]
+						},
+						"description": "Shows a random joke"
+					},
+					"response": []
+				},
+				{
+					"name": "Show random joke from category",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/jokes/random/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"jokes",
+								"random",
+								"2"
+							]
+						},
+						"description": "Shows a random joke from a particular category"
+					},
+					"response": []
+				},
+				{
+					"name": "Show random joke from category by name",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/jokes/random/dad",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"jokes",
+								"random",
+								"dad"
+							]
+						},
+						"description": "Shows a random joke from a particular category by name"
+					},
+					"response": []
+				},
+				{
+					"name": "Show random joke from category with ranking",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/jokes/random/1/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"jokes",
+								"random",
+								"1",
+								"3"
+							]
+						},
+						"description": "Shows a random joke from a particular category with ranking"
+					},
+					"response": []
+				},
+				{
+					"name": "Show random joke from category with ranking by name",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/jokes/random/generic/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"jokes",
+								"random",
+								"generic",
+								"3"
+							]
+						},
+						"description": "Shows a random joke from a particular category with ranking by name"
+					},
+					"response": []
+				},
+				{
+					"name": "Add joke",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"item\": {\n\t\t\"category_id\": 1,\n\t\t\"text\": \"What is hairy, brown, and goes up and down? - A kiwi in an evelator.\",\n\t\t\"rank\": 5\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/jokes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"jokes"
+							]
+						},
+						"description": "Adds a new joke"
+					},
+					"response": []
+				},
+				{
+					"name": "Update joke",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"item\": {\"newid\": 5, \"category_id\": 2, \"text\": \"Do you know what's cool? - Winter.\", \"rank\": 1}\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/jokes/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"jokes",
+								"4"
+							]
+						},
+						"description": "Updates an existing joke"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete joke",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/jokes/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"jokes",
+								"5"
+							]
+						},
+						"description": "Deletes an existing joke"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

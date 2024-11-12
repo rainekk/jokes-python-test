@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Joke #{{ joke.id }}</title>
+    <link rel="stylesheet" href="/css/joke.css" type="text/css" media="screen">
+  </head>
+  <body>
+    <div class="wrapper">
+      <table>
+        <tr>
+          <td>Joke ID:</td>
+          <td>{{ joke.joke_id }}</td>
+        </tr>
+        <tr>
+          <td>Category:</td>
+          <td>
+            {{ category.category_name }}
+          </td>
+        </tr>
+        <tr>
+          <td>Joke text:</td>
+          <td>{{ joke.joke_text }}</td>
+        </tr>
+        <tr>
+          <td>Joke ranking:</td>
+          <td>
+            1 (bad) <input type="range" min="1" max="10" value="{{ joke.joke_rank }}" disabled> 10 (good)
+          </td>
+        </tr>
+      </table>
+
+      <a href="/jokes">[back to jokes]</a><br>
+      <a href="/">[back to main]</a>
+    </div>
+  </body>
+</html>

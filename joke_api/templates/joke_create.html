@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Create joke</title>
+    <link rel="stylesheet" href="/css/joke.css" type="text/css" media="screen">
+  </head>
+  <body>
+    <div class="wrapper">
+      <form method="post" action="/jokes/create">
+        <table>
+          <tr>
+            <td>Category:</td>
+            <td>
+              <select name="category_id">
+                {% for item in categories.results %}
+                  <option value="{{ item.category_id }}">{{ item.category_name }}</option>
+                {% endfor %}
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Joke text:</td><td><textarea name="joke_text" rows="10" cols="30"></textarea></td>
+          </tr>
+          <tr>
+            <td>Joke ranking</td>
+            <td>
+              1 (bad) <input type="range" name="joke_rank" min="1" max="10" value="1" onchange="updateTextInput(this.value);"> 10 (good)
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2"><input type="submit" value="Submit"></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>
