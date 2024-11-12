@@ -3,10 +3,10 @@ MAINTAINER info@cstan.io
 
 # add base and community repositories
 ADD repositories /etc/apk/repositories
-RUN apk add --update python3 py3-pip@community
+RUN apk add --update python py3-pip@community
 
 # install dependencies
-RUN pip3 install flask
+RUN pip install flask
 
 # create application directory
 RUN mkdir -p /opt/joke_api/joke_api
