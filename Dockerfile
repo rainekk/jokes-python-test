@@ -3,7 +3,7 @@ MAINTAINER info@cstan.io
 
 # add base and community repositories
 ADD repositories /etc/apk/repositories
-RUN apk add --update python py3-pip@community
+RUN apk add --update python py-pip@community
 
 # install dependencies
 RUN pip install flask
