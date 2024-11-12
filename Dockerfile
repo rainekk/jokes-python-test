@@ -2,8 +2,8 @@ FROM alpine:3.11
 MAINTAINER info@cstan.io
 
 # add base and community repositories
-# ADD repositories /etc/apk/repositories
-# RUN apk add --update python py-pip@community
+ADD repositories /etc/apk/repositories
+RUN apk add --update python pip
 
 # install dependencies
 RUN pip install flask
